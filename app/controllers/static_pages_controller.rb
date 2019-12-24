@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+  before_action :authenticate_user!
   def show_foreign_amazonprime
     show_movie('amazon_prime', '海外映画')
   end

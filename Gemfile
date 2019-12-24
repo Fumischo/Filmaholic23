@@ -19,6 +19,13 @@ gem 'carrierwave'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
+gem 'devise'
+gem 'devise-bootstrap-views'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+
 
 # gem 'mini_magick', '~> 4.8'
 
@@ -36,10 +43,12 @@ group :development, :test do
 end
 
 group :development do
+  gem 'letter_opener_web'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'dotenv-rails'
 end
 
 group :test do

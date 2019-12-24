@@ -1,8 +1,15 @@
 class MoviesController < ApplicationController
+  # before_action :set_movie, only: [:show]
+  before_action :authenticate_user!
+
    # 映画一覧の表示
    def show
+    # if user_signed_in?
     @movie = Movie.find(params[:id])
     @review = Review.new
+
+    # @movie = current_user.movies.find(params[:id])
+    # @reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
     # reviews = Review.where(movie_id: params[:id])
     # total_score = 0
     # if reviews.length > 0
@@ -19,10 +26,26 @@ class MoviesController < ApplicationController
   end
 
 
-private
+  # def index
+  #   @movies = current_user.movies.order(created_at: :desc)
+  #   # @movies = Movie.all
+  # end
+
+  # def new
+  #   @movie = current_user.movies.new
+  # end
+  
+
+
+
+# private
   # ストロングパラメーター
-  def  movie_params
-    params.require(:movie).permit(:title, :genre,
-                                :description, :app, :review_score)
-  end
+  # def  movie_params
+  #   params.require(:movie).permit(:title, :genre,
+  #                               :description, :app, :review_score)
+  # end
+
+  # def set_movie
+  #   @movie = Movie.find(params[:id])
+  # end
 end
