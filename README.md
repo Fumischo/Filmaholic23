@@ -26,6 +26,7 @@ Rails 5.2.4
  *  レビュー投稿機能
  *  投稿者名、映画のレビュー、5段階評価を投稿できる。
  
+ 
 [カタログ設計](https://docs.google.com/spreadsheets/d/1jDhjZZb9sK8EXOst9NT0HSTwPBF3sZP68FSuT2hhjNI/edit?pli=1#gid=0)
 
 [テーブル定義](https://docs.google.com/spreadsheets/d/1jDhjZZb9sK8EXOst9NT0HSTwPBF3sZP68FSuT2hhjNI/edit?pli=1#gid=0)
