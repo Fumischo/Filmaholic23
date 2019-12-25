@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/show_anime_amazonprime', to: 'static_pages#show_anime_amazonprime'
   get '/show_anime_netflix', to: 'static_pages#show_anime_netflix'
   get '/show_anime_hulu', to: 'static_pages#show_anime_hulu'
+  
   resources :movies do
     resources :reviews
   end

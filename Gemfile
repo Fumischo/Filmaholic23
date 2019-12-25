@@ -25,6 +25,7 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 
 
 # gem 'mini_magick', '~> 4.8'
