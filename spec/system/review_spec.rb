@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'reviews', type: :system do
   before do
-    @user = User.create!(name: 'いとう')
+    @user = User.create!(name: )
   end
 
   it 'completes yubinbango automatically with JS' do
