@@ -4,15 +4,19 @@ class ReviewsController < ApplicationController
   @movie = Movie.find(params[:movie_id])
   @review = Review.new
   if @review.update(review_params)
-    flash[:success] = '投稿が完了しました'
-    redirect_to movie_path(@movie)
+    # flash[:success] = '投稿が完了しました'
+    redirect_to movie_path(@movie), notice: '投稿が完了しました'
       @movie.review_score = @movie.reviews.average(:score).round(1)
       @movie.save
   else
-    flash[:danger] = '正しく入力してください'
-    redirect_to movie_path(@movie)
+    # flash[:danger] = '正しく入力してください'
+    redirect_to movie_path(@movie), notice: '全ての項目に入力してください'
   end
 end
+
+#   def destroy
+    
+# end
 
 private
 # ストロングパラメーター
