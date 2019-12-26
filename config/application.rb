@@ -15,7 +15,6 @@ module Filmaholic3
     config.time_zone = 'Asia/Tokyo'
   end
 
-  config.assets.initialize_on_precompile = false
   # config.generators do |g|
   #   g.test_framework :rspec,
   #     fixtures: true,
