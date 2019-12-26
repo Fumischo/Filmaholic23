@@ -31,7 +31,7 @@
   <%= form_with model: [@movie, @review], local: true do |f| %>
   <%= f.hidden_field :movie_id, {value: @movie.id}%>
     <div class='form-box'>
-      <label class='form-title' for='username'>ユーザー名</label>
+      <label class='form-title' for='username'>ハンドルネーム</label>
       <%= f.text_field :name, class: 'input-box', id: 'username' %>
     </div>
     <div class='form-box'>

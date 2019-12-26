@@ -42,10 +42,25 @@ RSpec.describe Movie, type: :system do
       it 'レビュー一覧画面にあるジャンル検索フォームでジャンル検索かけると当てはまるジャンル検索結果が表示される' do
         click_on 'Amazon prime'
         click_on '海外映画'
-        select('ロマンス', from: 'serch_genre')
+        select('ロマンス', from: 'search_genre')
         click_button '検索'
         # save_and_open_screenshot
         expect(page).to have_content '博士と彼女のセオリー (字幕版)'
+      end
+      it 'レビュー投稿画面でハンドルネーム、レビュー内容、評価を入力したらレビュー一覧画面に投稿した内容が表示される' do
+        click_on 'Amazon prime'
+        click_on '海外映画'
+        select('ロマンス', from: 'search_genre')
+        click_button '検索'
+        click_link '博士と彼女のセオリー (字幕版)'
+        fill_in "ハンドルネーム", with: 'Fumischo'
+        fill_in "レビュー内容", with: 'Awesome!'
+        fill_in "評価", with: '4.9'
+        click_button '送信'
+        expect(page).to have_content 'Fumischo'
+        expect(page).to have_content 'Awesome!'
+        expect(page).to have_content '4.9'
+        # save_and_open_screenshot
       end
     end
   end
