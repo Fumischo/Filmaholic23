@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
+
+
+
   
   get '/show_foreign_amazonprime', to: 'static_pages#show_foreign_amazonprime'
   get '/show_foreign_netflix', to: 'static_pages#show_foreign_netflix'

@@ -26,6 +26,8 @@ gem 'devise-i18n-views'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
+gem 'bootstrap-social-rails'
+gem 'font-awesome-rails'
 
 
 # gem 'mini_magick', '~> 4.8'
@@ -44,8 +46,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
-
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug'
 end
 
 group :development do
@@ -60,7 +61,7 @@ end
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
+  gem 'webdrivers'
 end
 
 

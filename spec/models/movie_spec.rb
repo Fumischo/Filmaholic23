@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe Review, type: :model do
+RSpec.describe Movie, type: :model do
   before do
     @user = FactoryBot.create(:user)
   end
-  it "nameが空ならバリデーションが通らない" do
-    review = Review.new(name: '', content: '失敗テスト', review: '5')
-    expect(review).not_to be_valid
+  it "タイトルとジャンルが空の場合平均評価が高い順に表示される" do
+    movie = Movie.new(title: '', genre: '')
+    expect(movie).not_to be_valid
   end
 
   # it "titleが60文字以上ならバリデーションが通らない" do
