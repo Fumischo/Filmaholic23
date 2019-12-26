@@ -27,10 +27,9 @@ RSpec.describe User, type: :system do
         fill_in('user_email', with: 'f1@example.com')
         fill_in('user_password', with: 'password')
         click_button 'ログイン'
-        
         expect(page).to have_content 'ログインしました。'
     end
-
+  # FIXME: live配信モードでないとテスト不可
   # describe 'facebookでログインした場合' do
   #   it 'ログインできる' do
   #     visit root_path
@@ -39,15 +38,15 @@ RSpec.describe User, type: :system do
   #   end
   # end
 
-  describe 'Googleでログインした場合' do
-    it 'ログインできる' do
-      visit root_path
-      # binding.pry
-      click_on 'Googleでログイン'
-      # click_link 'Sign in with Google '
-      expect(page).to have_content "googleアカウントによる認証に成功しました。"
+    describe 'Googleでログインした場合' do
+      it 'ログインできる' do
+        visit root_path
+        click_link 'Googleでログイン'
+        # binding.pry
+        # click_link 'Sign in with Google '
+        expect(page).to have_content "google アカウントによる認証に成功しました。"
+        end
       end
     end
-  end
   end
 end

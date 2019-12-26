@@ -4,12 +4,14 @@ RSpec.describe Movie, type: :system do
 
   before do
     user = FactoryBot.create(:user)
+    movie = FactoryBot.create(:movie)
+    movie2 = FactoryBot.create(:movie2)
     visit root_path
-      click_link 'アカウントをお持ちでない方'
-      fill_in('user_email', with: 'fumischo@dic.com')
-      fill_in('user_password', with: 'password')
-      fill_in('user_password_confirmation', with: 'password')
-      click_button 'Sign up'
+    click_link 'アカウントをお持ちでない方'
+    fill_in('user_email', with: 'fumischo@dic.com')
+    fill_in('user_password', with: 'password')
+    fill_in('user_password_confirmation', with: 'password')
+    click_button 'Sign up'
   end
 
   describe 'Top画面' do
@@ -30,13 +32,20 @@ RSpec.describe Movie, type: :system do
         click_on '海外映画'
         expect(page).to have_content 'Amazon primeのレビュー'
       end
-      it '海外映画を選択すると映画、レビュー一覧画面に遷移する' do
+      it 'レビュー一覧画面にあるタイトル検索フォームでタイトル検索かけると検索結果が表示される' do
         click_on 'Amazon prime'
         click_on '海外映画'
-        fill_in("search_title", with: 'あと1センチの恋(字幕版)')
+        fill_in 'search_title', with: 'あと1センチの恋(字幕版)'
         click_button '検索'
         expect(page).to have_content 'あと1センチの恋(字幕版)'
-        binding.pry
+      end
+      it 'レビュー一覧画面にあるジャンル検索フォームでジャンル検索かけると当てはまるジャンル検索結果が表示される' do
+        click_on 'Amazon prime'
+        click_on '海外映画'
+        select('ロマンス', from: 'serch_genre')
+        click_button '検索'
+        # save_and_open_screenshot
+        expect(page).to have_content '博士と彼女のセオリー (字幕版)'
       end
     end
   end

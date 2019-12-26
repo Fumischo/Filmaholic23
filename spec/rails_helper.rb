@@ -8,6 +8,43 @@ require File.expand_path('../config/environment', __dir__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
+OmniAuth.config.test_mode = true
+OmniAuth.configure do |c|
+  c.test_mode = true
+  c.mock_auth[:facebook] = OmniAuth::AuthHash.new({
+    provider: 'facebook',
+    uid: SecureRandom.uuid,
+    info: {
+      # name: "facebook_user",
+      email: SecureRandom.uuid + "@gmail.com"
+    },
+    credentials: {
+      token: 'hogepiyo1234'
+    }
+  })
+  c.mock_auth[:google] = OmniAuth::AuthHash.new({
+    provider: 'google',
+    uid: SecureRandom.uuid,
+    info: {
+      # name: "line_user",
+      email: SecureRandom.uuid + "@gmail.com"
+    },
+    credentials: {
+      token: 'hogepiyo1234'
+    }
+  })
+  c.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
+    provider: 'google_oauth2',
+    uid: SecureRandom.uuid,
+    info: {
+      # name: "line_user",
+      email: SecureRandom.uuid + "@gmail.com"
+    },
+    credentials: {
+      token: 'hogepiyo1234'
+    }
+  })
+end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -62,3 +99,4 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+

@@ -8,7 +8,6 @@
 
 
 require "csv"
- 
 # amazon prime 海外映画読み込み
 CSV.foreach('db/movie_data/amazon_prime.csv', headers: true) do |row|
   Movie.create(title: row['タイトル'],
