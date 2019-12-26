@@ -14,7 +14,7 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  config.action_mailer.default_url_options = { host: herokuapp.com }
+  config.action_mailer.default_url_options = { host: '自分のHerokuアプリのドメイン' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     user_name: ENV['SENDGRID_USERNAME'],
