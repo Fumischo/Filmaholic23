@@ -13,7 +13,6 @@ Rails.application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-  config.action_mailer.delivery_method = :letter_opener
 
   config.action_mailer.default_url_options = { host: 'https://calm-ridge-56947.herokuapp.com' }
   ActionMailer::Base.delivery_method = :smtp
