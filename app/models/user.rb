@@ -17,7 +17,7 @@ class User < ApplicationRecord
                       password: Devise.friendly_token[0, 20],
                                  )
     end
-    user.skip_confirmation!
+    # user.skip_confirmation!
     user.save
     user
   end
@@ -32,7 +32,7 @@ class User < ApplicationRecord
                       password: Devise.friendly_token[0, 20],
                                    )
     end
-    user.skip_confirmation!
+    # user.skip_confirmation!
     user.save
     user
   end
