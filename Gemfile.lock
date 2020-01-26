@@ -332,7 +332,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.2)
   devise
-  devise-bootstrap-views
+  devise-bootstrap-views (~> 1.0)
   devise-i18n
   devise-i18n-views
   dotenv-rails

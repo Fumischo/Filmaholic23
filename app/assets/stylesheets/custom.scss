@@ -2,24 +2,28 @@
 
 /* ヘッダー*/
 body {
-  background-color: #F0FFFF!important;
+  background-color: #f0ffff !important;
 }
 
 .top {
-  background-color: #BBCCCC;
+  background-color: #bbcccc;
   margin: 0;
   padding: 10px;
 }
 
 .top h2 {
-  color:#ffffff!important;
+  color: #ffffff !important;
   font-size: 15px;
 }
 
 h1 {
   display: inline;
-  font-size: 30px;
-  color:#ffffff!important;
+  font-size: xx-large;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-weight: bolder;
+  // font-weight: 100;
+  // color:#ffffff!important;
+  color: rgb(253, 253, 255);
 }
 
 .header_menu {
@@ -27,7 +31,7 @@ h1 {
 }
 
 .menu {
-  background-color: #BBCCCC;
+  background-color: #bbcccc;
   padding: 5px;
 }
 
@@ -45,11 +49,11 @@ hr {
   border-bottom: double;
 }
 
-.navbar{
-  min-width: 0%!important;
+.navbar {
+  min-width: 0% !important;
 }
 
-.logout{
+.logout {
   float: right;
 }
 
